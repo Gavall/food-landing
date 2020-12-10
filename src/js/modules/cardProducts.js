@@ -1,4 +1,6 @@
-import {getResource} from '../services/services';
+import {
+    getResource
+} from '../services/services';
 
 function cardProducts() {
     //----------------------------------------
@@ -25,13 +27,13 @@ function cardProducts() {
         render() { // Создание карточки товара
             const element = document.createElement('div');
 
-            if(this.classes.length === 0) {
+            if (this.classes.length === 0) {
                 this.classes = 'menu__item';
                 element.classList.add(this.classes);
             } else {
                 this.classes.forEach(className => element.classList.add(className));
             }
-            
+
             element.innerHTML = `
                 <img src=${this.linkImg} alt=${this.alt}>
                 <h3 class="menu__item-subtitle">${this.title}</h3>
@@ -47,11 +49,17 @@ function cardProducts() {
     }
 
     getResource('http://localhost:3000/menu')
-    .then(data => {
-        data.forEach(({img, altimg, title, descr, price}) => {
-            new CardProduct(img, altimg, title, descr, price, '.menu__field .container').render(); 
+        .then(data => {
+            data.forEach(({
+                img,
+                altimg,
+                title,
+                descr,
+                price
+            }) => {
+                new CardProduct(img, altimg, title, descr, price, '.menu__field .container').render();
+            });
         });
-    });
-}  
+}
 
 export default cardProducts;

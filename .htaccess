@@ -1,0 +1,14 @@
+#запрет выдачи листинга
+Options all -Indexes
+
+#заблокировать доступ к файлам определенного типа
+<FilesMatch ".(htaccess|gitignore|jshintrc)$">
+ Order Allow,Deny
+ Deny from all
+ </FilesMatch>
+
+#заблокировать доступ к файлам
+ <FilesMatch "(db.json|package-lock.json|package.json|server.php|webpack.config.js)$">
+ Order Allow,Deny
+ Deny from all
+ </FilesMatch>

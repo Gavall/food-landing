@@ -82,6 +82,16 @@
       "name": "erte4435",
       "phone": "34545345",
       "id": 12
+    },
+    {
+      "name": "<script>alert('fuck');</script>",
+      "phone": "<script>alert('fuck');</script>",
+      "id": 13
+    },
+    {
+      "name": "<script>alert('fuck');</script>",
+      "phone": "<script>alert('fuck');</script>",
+      "id": 14
     }
   ]
 }
